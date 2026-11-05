@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#256452"><meta name="description" content="Eigene Anlaut-Bilderrätsel für Kinder erstellen und auf A4 ausdrucken. Lokal und ohne Anmeldung.">
+<title>Lauti · Kleine Bilder, große Wörter</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23256452'/%3E%3Ctext x='32' y='46' text-anchor='middle' font-size='44' fill='white'%3EL%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="./style.css"><script type="module" src="./src/app.js"></script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="./"><span class="brand-mark">L<span>•</span></span>Lauti</a><span class="tagline">Kleine Bilder, große Wörter.</span><span class="privacy">● Lokal & ohne Anmeldung</span></header>
+<main>
+<section class="intro"><span class="eyebrow">SPIELERISCH BUCHSTABEN ENTDECKEN</span><h1>Ein Wort. Viele kleine Aha!</h1><p>Mach aus deinen Wörtern ein Bilderrätsel zum Lesen- und Schreibenlernen.</p></section>
+<div class="workspace">
+<aside class="controls">
+<div class="step"><span>1</span><h2>Deine Wörter</h2></div>
+<p>Was soll heute auf das Lernblatt?</p>
+<form id="word-form"><label for="words">Ein Wort pro Zeile · bis zu 4 Wörter</label><textarea id="words" rows="5" spellcheck="false" maxlength="120">Fenster
+Sonne
+Tiger
+Maus</textarea><p class="hint">Je Wort bis zu 12 Buchstaben. Kommas gehen auch.</p><button class="primary" type="submit">Lernblatt erstellen <span aria-hidden="true">→</span></button></form>
+<p id="error" class="error" role="alert" hidden></p>
+<div class="divider"></div>
+<div class="step"><span>2</span><h2>Feinschliff</h2></div>
+<label class="option"><input id="solution" type="checkbox"><span>Lösungen einblenden<small>Zum gemeinsamen Kontrollieren</small></span></label>
+<label class="option"><input id="uppercase" type="checkbox"><span>Lösung in Großbuchstaben<small>Für die ersten Schreibversuche</small></span></label>
+<button class="secondary" id="shuffle" type="button">↻ Bilder neu mischen</button>
+<div class="tip"><span aria-hidden="true">✦</span><p><strong>Ein Bild passt nicht?</strong><br>Tippe es in der Vorschau an, um das Motiv zu wechseln. Der Bildname hilft dir beim Prüfen.</p></div>
+<p class="hint">Anlautbilder sind manchmal mehrdeutig. Besprecht die Motive vor dem Rätseln. V, X und Y sind eher für Fortgeschrittene.</p>
+</aside>
+<section class="preview-area" aria-label="Lernblatt-Vorschau"><div class="preview-toolbar"><div><span class="live-dot"></span><strong>Dein Lernblatt</strong><span class="paper-tag">A4 · Hochformat</span></div><button class="primary print-button" id="print" type="button">Drucken / PDF</button></div>
+<p id="status" class="sr-only" role="status" aria-live="polite"></p>
+<article class="sheet" id="sheet"><header class="sheet-header"><div><span class="eyebrow">MEIN BUCHSTABEN-ABENTEUER</span><h2>Welches Wort versteckt sich hier?</h2><p>Sprich das Bildwort. Schreibe den ersten Buchstaben ins Kästchen.</p></div><div class="name-line">Name: <span></span></div></header><div class="sheet-legend"><span class="yellow-swatch"></span> Gelbe Felder sind Selbstlaute: A, E, I, O, U, Ä, Ö, Ü.</div><div id="puzzles"></div><footer class="sheet-footer"><span>Lauti <span aria-hidden="true">✦</span> Mit jedem Buchstaben ein Stück weiter.</span><span>Du schaffst das!</span></footer></article>
+<p class="print-note">Die Bildnamen und Bedienelemente werden nicht mitgedruckt. Im Druckdialog A4, 100 % und keine Kopf-/Fußzeilen wählen. Für gelbe Felder „Hintergrundgrafiken“ aktivieren.</p>
+</section>
+</div>
+</main><footer class="app-footer">Mit Neugier lernen. Im eigenen Tempo.</footer>
+</body></html>
